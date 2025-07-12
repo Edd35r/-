@@ -34,8 +34,10 @@ jobs:
 
       - name: Install Haxelib libraries
         run: |
+          sudo apt-get update
+          sudo apt-get install -y git
           haxelib setup /home/runner/haxelib
-          haxelib install lime 7.9.0
+          haxelib git lime https://github.com/openfl/lime.git
           haxelib install openfl 9.1.0
           haxelib install flixel
           haxelib install flixel-ui
